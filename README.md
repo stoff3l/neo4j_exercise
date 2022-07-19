@@ -3,7 +3,7 @@
 2. Install python package requirements
     `pip3 install -r requirements.txt`
 3. Install Docker Desktop
-4. Clone this repo into `~/repos/` folder. You should now have your repo folder living here at `~/repos/neo4j_exercise`
+4. Clone this repo into `~/repos/` folder. You should now have your repo folder living at `~/repos/neo4j_exercise`
 5. Run neo4j Docker container using
     ```bash
     docker run -p 7474:7474 -p 7687:7687 \
@@ -28,9 +28,9 @@ The data model / graph used in this project is as shown in below image.
 > **_NOTE:_** The source data includes errors which I have not corrected as part of this exercise. The errors are due to the field seperators (`,`) being present inside some of the fields. This causes some rows to be imported incorrectly.
 
 The repo contains 2 relevant files:
-* [RetailAnalysis.py](RetailAnalysis.md)
-  Contains a class called `RetailAnalysis`, which includes methods to imnport each node and the relationships between them from the CSV data located in `noe4j_exercise/data/raw_data/`
-* [ingest_data.py](ingest_data.md)
+* [RetailAnalysis.py](RetailAnalysis.py)<br>
+  Contains a class called `RetailAnalysis`, which includes methods to import each node and the relationships between them from the CSV data located in `noe4j_exercise/raw_data/`
+* [ingest_data.py](ingest_data.py)<br>
   File to run in order to perform data ingestion and build the data graph
 
 In order to run the ingestion, run the following command from within the `neo4j_exercise` folder:
@@ -39,10 +39,10 @@ python3 ./ingest_data.py
 ```
 
 
-## Running queries against data graph
+## Running queries against the data graph
 Go to `localhost:7474` using your browser and you should see the neo4j browser load.
 
-A few queries against the data graph:
+A few example queries against the data graph:
 
 1. Which orders have included the product with productID=1 (Chai)?
     Run the following Cypher query:
@@ -83,5 +83,5 @@ A few queries against the data graph:
     ORDER BY count(p) DESC
     LIMIT 3
     ```
-    ![image](images/table3.png)
+    ![image](images/table3.png)<br>
     We can see that order with orderID number 11077 contained 25 products, which was the highest number.
