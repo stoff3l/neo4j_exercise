@@ -1,7 +1,5 @@
 import RetailAnalysis as ra
 
-
-# ---------------------------
 retail = ra.RetailAnalysis()
 
 retail.create_neo4j_driver()
